@@ -1199,4 +1199,16 @@
 
   
 
-<div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div><div class="yui-popup-container-node"><div id="yui_3_17_2_1_1793482057095_351" class="yui3-widget sqs-widget sqs-popup-overlay"><div id="yui_3_17_2_1_1793482057095_353" class="sqs-popup-overlay-content"></div></div></div><div></div></body></html>
+<div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div><div class="yui-popup-container-node"><div id="yui_3_17_2_1_1793482057095_351" class="yui3-widget sqs-widget sqs-popup-overlay"><div id="yui_3_17_2_1_1793482057095_353" class="sqs-popup-overlay-content"></div></div></div><div></div><script>/* phone menu toggle */
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.header-burger-btn'),open;
+  if(b){
+    open=document.body.classList.toggle('header--menu-open');
+    document.querySelectorAll('.header-burger-btn').forEach(function(x){x.classList.toggle('burger--active',open);x.setAttribute('aria-expanded',open)});
+  }else if(e.target.closest('.header-menu a')){
+    document.body.classList.remove('header--menu-open');
+    document.querySelectorAll('.header-burger-btn').forEach(function(x){x.classList.remove('burger--active');x.setAttribute('aria-expanded',false)});
+  }
+});
+</script>
+</body></html>
