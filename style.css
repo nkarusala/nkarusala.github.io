@@ -1,0 +1,47 @@
+:root { --accent: #ec5c39; --bg: #f6f5ea; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: #000; font: 500 16px/1.5 Raleway, sans-serif; }
+a { color: var(--accent); }
+img { display: block; max-width: 100%; }
+
+h1, h2 { font-family: "Space Grotesk", sans-serif; font-weight: 500; color: var(--accent); letter-spacing: -0.05em; }
+h2 { font-size: 32px; margin: 0 0 24px; }
+p { margin: 0 0 16px; }
+.small { font-size: 14px; }
+
+/* header */
+header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px; padding: 36px 4vw; }
+header h1 { margin: 0; font-size: 25px; }
+header h1 a { text-decoration: none; }
+nav { display: flex; gap: 24px; font-size: 18px; }
+nav a { color: #000; text-decoration: none; }
+nav a:hover, nav a[aria-current] { text-decoration: underline; }
+
+main { padding: 24px 4vw 96px; max-width: 1200px; margin: 0 auto; }
+.round { aspect-ratio: 1; object-fit: cover; border-radius: 50%; width: 100%; }
+
+/* home */
+.home { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 48px; align-items: start; }
+.home .round { max-width: 220px; margin-bottom: 16px; }
+.news p { font-size: 14px; }
+
+/* d3 lab */
+.lab section { margin-bottom: 72px; }
+.project { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: center; margin-bottom: 40px; }
+.team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px 48px; }
+.team .round { max-width: 190px; margin-bottom: 12px; }
+
+/* teaching */
+.teaching { max-width: 720px; }
+.course { margin-top: 40px; }
+.course p:first-child { font-weight: 700; margin-bottom: 4px; }
+.course .small { opacity: 0.7; }
+
+@media (max-width: 767px) {
+  .home { grid-template-columns: 1fr; gap: 24px; }
+  .home .bio { order: 1; }
+  .project { grid-template-columns: 1fr; gap: 16px; }
+  .project .round { max-width: 240px; margin: 0 auto; }
+  .team { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
