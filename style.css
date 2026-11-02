@@ -17,6 +17,7 @@ header h1 a { text-decoration: none; }
 nav { display: flex; gap: 24px; font-size: 18px; }
 nav a { color: #000; text-decoration: none; }
 nav a:hover, nav a[aria-current] { text-decoration: underline; }
+.menu { display: none; }
 
 main { padding: 24px 4vw 96px; max-width: 1200px; margin: 0 auto; }
 .round { aspect-ratio: 1; object-fit: cover; border-radius: 50%; width: 100%; }
@@ -39,6 +40,19 @@ main { padding: 24px 4vw 96px; max-width: 1200px; margin: 0 auto; }
 .course .small { opacity: 0.7; }
 
 @media (max-width: 767px) {
+  /* phone menu */
+  header { flex-wrap: nowrap; }
+  header h1 { position: relative; z-index: 2; }
+  .menu { display: block; position: relative; z-index: 2; width: 32px; height: 20px; padding: 0; border: 0; background: none; cursor: pointer; }
+  .menu span { position: absolute; left: 0; right: 0; height: 2px; background: #000; transition: transform .2s; }
+  .menu span:first-child { top: 4px; }
+  .menu span:last-child { bottom: 4px; }
+  .menu-open .menu span:first-child { transform: translateY(5px) rotate(45deg); }
+  .menu-open .menu span:last-child { transform: translateY(-5px) rotate(-45deg); }
+  nav { display: none; position: fixed; inset: 0; z-index: 1; background: var(--bg); flex-direction: column; justify-content: center; align-items: center; gap: 28px; font-size: 28px; }
+  .menu-open nav { display: flex; }
+  .menu-open { overflow: hidden; }
+
   .home { grid-template-columns: 1fr; gap: 24px; }
   .home .bio { order: 1; }
   .project { grid-template-columns: 1fr; gap: 16px; }
