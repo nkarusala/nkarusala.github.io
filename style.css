@@ -54,7 +54,8 @@ main { padding: 24px 4vw 96px; max-width: 1200px; margin: 0 auto; }
   .menu-open { overflow: hidden; }
 
   .home { grid-template-columns: 1fr; gap: 24px; }
-  .home .bio { order: 1; }
+  .home > :first-child { text-align: center; }
+  .home .round { margin: 0 auto 16px; }
   .project { grid-template-columns: 1fr; gap: 16px; }
   .project .round { max-width: 240px; margin: 0 auto; }
   .team { grid-template-columns: repeat(2, 1fr); gap: 24px; }
